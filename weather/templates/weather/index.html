@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Додаток Погоди</title>
+    <link rel="stylesheet" href="{% static 'weather/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌤 Weather App</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.city }}
+            <button type="submit">Пошук</button>
+        </form>
+
+        {% if error %}
+        <div class="error">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        {% if weather %}
+        <div class="weather-card">
+            <div class="city">
+                {{ weather.city }}, {{ weather.country }}
+            </div>
+            <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@4x.png">
+            <div class="temp">
+                {{ weather.temp }}°C
+            </div>
+            <div class="description">
+                {{ weather.description }}
+            </div>
+            <div class="info">
+                <div class="info-box">
+                    <span>Відчувається</span>
+                    <strong>{{ weather.feels_like }}°C</strong>
+                </div>
+                <div class="info-box">
+                    <span>Вологість</span>
+                    <strong>{{ weather.humidity }}%</strong>
+                </div>
+                <div class="info-box">
+                    <span>Тиск</span>
+                    <strong>{{ weather.pressure }} hPa</strong>
+                </div>
+                <div class="info-box">
+                    <span>Вітер</span>
+                    <strong>{{ weather.wind }} м/с</strong>
+                </div>
+                <div class="info-box">
+                    <span>Мін.</span>
+                    <strong>{{ weather.temp_min }}°C</strong>
+                </div>
+                <div class="info-box">
+                    <span>Макс.</span>
+                    <strong>{{ weather.temp_max }}°C</strong>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

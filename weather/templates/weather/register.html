@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef3ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 320px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #218838;
+        }
+
+        .text {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .text a {
+            color: #28a745;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="register-box">
+    <h2>Реєстрація</h2>
+
+    <form>
+        <input type="text" class="input" placeholder="Логін">
+        <input type="email" class="input" placeholder="Email">
+        <input type="password" class="input" placeholder="Пароль">
+        <input type="password" class="input" placeholder="Повтор пароля">
+
+        <button class="btn" type="button">Зареєструватися</button>
+    </form>
+
+    <div class="text">
+        Вже є акаунт? <a href="/login/">Увійти</a>
+    </div>
+</div>
+
+</body>
+</html>

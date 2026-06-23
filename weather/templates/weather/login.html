@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Вхід</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f6ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 320px;
+        }
+
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background: #4a6cf7;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #3a5ce5;
+        }
+
+        .text {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .text a {
+            color: #4a6cf7;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-box">
+    <h2>Вхід</h2>
+
+    <form>
+        <input type="text" class="input" placeholder="Логін">
+        <input type="password" class="input" placeholder="Пароль">
+        <button class="btn" type="button">Увійти</button>
+    </form>
+
+    <div class="text">
+        Немає акаунта? <a href="/register/">Реєстрація</a>
+    </div>
+</div>
+
+</body>
+</html>

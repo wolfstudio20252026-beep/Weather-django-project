@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Result</title>
+    <link rel="stylesheet" href="{% static 'weather/css/style.css' %}">
+</head>
+<body>
+<div class="container">
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% else %}
+        <div class="weather-card">
+            <div class="city">
+                {{ weather.city }}, {{ weather.country }}
+            </div>
+
+            <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@4x.png">
+
+            <div class="temp">
+                {{ weather.temp }}°C
+            </div>
+
+            <div class="description">
+                {{ weather.description }}
+            </div>
+
+            <div class="info">
+                <div>Feels like: {{ weather.feels_like }}°C</div>
+                <div>Humidity: {{ weather.humidity }}%</div>
+                <div>Pressure: {{ weather.pressure }} hPa</div>
+                <div>Wind: {{ weather.wind }} m/s</div>
+            </div>
+        </div>
+    {% endif %}
+
+</div>
+</body>
+</html>
